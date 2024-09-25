@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio Junior Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.png');
+            background-size: cover;
+            color: white;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(128, 0, 128, 0.8);
+            padding: 10px;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 15px 30px;
+            border: none;
+            background-color: rgba(128, 0, 128, 0.8);
+            color: white;
+            font-size: 18px;
+        }
+
+        .tab:hover {
+            background-color: rgba(186, 85, 211, 0.8);
+        }
+
+        .content-section {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dropdown ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown ul li {
+            background-color: rgba(128, 0, 128, 0.9);
+            padding: 15px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropdown ul li:hover {
+            background-color: rgba(186, 85, 211, 0.9);
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(128, 0, 128, 0.7);
+            color: white;
+            box-shadow: 0 0 10px rgba(186, 85, 211, 0.9);
+        }
+
+        .hidden-content-neon {
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(128, 0, 128, 0.9);
+            box-shadow: 0 0 15px rgba(186, 85, 211, 1);
+            color: white;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Selection -->
+    <div class="language-selector">
+        <img src="eng.png" alt="English" onclick="changeLanguage('en')">
+        <img src="br.png" alt="Portuguese" onclick="changeLanguage('pt')">
+        <img src="ita.png" alt="Italian" onclick="changeLanguage('it')">
+    </div>
+  
+    <div class="tabs">
+        <button class="tab" onclick="showSection('projects')">Projects</button>
+        <button class="tab" onclick="showSection('technologies')">Technologies</button>
+        <button class="tab" onclick="showSection('hardSkills')">Hard Skills</button>
+        <button class="tab" onclick="showSection('softSkills')">Soft Skills</button>
+        <button class="tab" onclick="showSection('roles')">Roles</button>
+        <button class="tab" onclick="showSection('certifications')">Certifications & Courses</button>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="content-section dropdown">
+        <ul>
+            <li onclick="showContent('proj1')">Internal Knowledge Base Development</li>
+            <li onclick="showContent('proj2')">HTTP Load Balancer with NGINX on GCP</li>
+            <li onclick="showContent('proj3')">Migration to Cloud SQL with pglogical</li>
+            <li onclick="showContent('proj4')">Automation with Ansible & Terraform</li>
+        </ul>
+        <div id="proj1" class="hidden-content-neon">
+            <p>Project involving the creation of an internal knowledge base to automate support processes using Ansible and Terraform.</p>
+        </div>
+        <div id="proj2" class="hidden-content-neon">
+            <p>Configured an HTTP Load Balancer with NGINX web servers on Google Cloud Platform, improving traffic distribution and availability.</p>
+        </div>
+        <div id="proj3" class="hidden-content-neon">
+            <p>Migrated a PostgreSQL database to Cloud SQL using Database Migration Service, ensuring data consistency through pglogical replication.</p>
+        </div>
+        <div id="proj4" class="hidden-content-neon">
+            <p>Automated infrastructure processes with Ansible and Terraform, streamlining network and cloud deployments.</p>
+        </div>
+    </div>
+
+    <!-- Technologies Section -->
+    <div id="technologies" class="content-section dropdown">
+        <ul>
+            <li onclick="showContent('tech1')">Google Cloud Platform</li>
+            <li onclick="showContent('tech2')">Kubernetes</li>
+            <li onclick="showContent('tech3')">Ansible</li>
+            <li onclick="showContent('tech4')">Terraform</li>
+        </ul>
+        <div id="tech1" class="hidden-content-neon">
+            <p>Experience with Google Cloud services like Compute Engine, Cloud SQL, and VPC management.</p>
+        </div>
+        <div id="tech2" class="hidden-content-neon">
+            <p>Proficient in deploying, scaling, and managing containerized applications with Kubernetes.</p>
+        </div>
+        <div id="tech3" class="hidden-content-neon">
+            <p>Automation of infrastructure deployment and configuration management using Ansible playbooks.</p>
+        </div>
+        <div id="tech4" class="hidden-content-neon">
+            <p>Infrastructure as code using Terraform to define, provision, and manage cloud resources.</p>
+        </div>
+    </div>
+
+    <!-- Hard Skills Section -->
+    <div id="hardSkills" class="content-section dropdown">
+        <ul>
+            <li onclick="showContent('hard1')">Network Management</li>
+            <li onclick="showContent('hard2')">Cloud Infrastructure</li>
+            <li onclick="showContent('hard3')">Process Automation</li>
+            <li onclick="showContent('hard4')">Incident Response</li>
+        </ul>
+        <div id="hard1" class="hidden-content-neon">
+            <p>7 years of experience in managing networks, including LAN/WAN and security protocols.</p>
+        </div>
+        <div id="hard2" class="hidden-content-neon">
+            <p>Skilled in setting up, configuring, and maintaining cloud environments, focusing on security and scalability.</p>
+        </div>
+        <div id="hard3" class="hidden-content-neon">
+            <p>Developed automated solutions to enhance workflow and minimize human intervention using tools like Ansible.</p>
+        </div>
+        <div id="hard4" class="hidden-content-neon">
+            <p>Expertise in detecting, analyzing, and resolving network and security incidents promptly.</p>
+        </div>
+    </div>
+
+    <!-- Soft Skills Section -->
+    <div id="softSkills" class="content-section dropdown">
+        <ul>
+            <li onclick="showContent('soft1')">Problem Solving</li>
+            <li onclick="showContent('soft2')">Teamwork</li>
+            <li onclick="showContent('soft3')">Communication</li>
+            <li onclick="showContent('soft4')">Adaptability</li>
+        </ul>
+        <div id="soft1" class="hidden-content-neon">
+            <p>Strong analytical and problem-solving abilities applied to technical challenges and system improvements.</p>
+        </div>
+        <div id="soft2" class="hidden-content-neon">
+            <p>Effective collaboration with cross-functional teams in fast-paced environments to achieve shared goals.</p>
+        </div>
+        <div id="soft3" class="hidden-content-neon">
+            <p>Clear and concise communication of complex technical concepts to diverse stakeholders.</p>
+        </div>
+        <div id="soft4" class="hidden-content-neon">
+            <p>Flexible and quick to adapt to new technologies, processes, and changing environments.</p>
+        </div>
+    </div>
+
+    <!-- Roles Section -->
+    <div id="roles" class="content-section dropdown">
+        <ul>
+            <li onclick="showContent('role1')">IT Security Administrator at MeedBR</li>
+            <li onclick="showContent('role2')">ITOps Specialist at Quero Educação</li>
+            <li onclick="showContent('role3')">Network Engineer at Fundação Cultural Cassiano Ricardo</li>
+            <li onclick="showContent('role4')">Consultant at MR Consultoria</li>
+        </ul>
+        <div id="role1" class="hidden-content-neon">
+            <p>Responsible for network security, implementing security policies, and managing firewall systems at MeedBR.</p>
+        </div>
+        <div id="role2" class="hidden-content-neon">
+            <p>Lead ITOps specialist, focusing on infrastructure management and process automation at Quero Educação.</p>
+        </div>
+        <div id="role3" class="hidden-content-neon">
+            <p>Network engineer managing infrastructure and network security at Fundação Cultural Cassiano Ricardo.</p>
+        </div>
+        <div id="role4" class="hidden-content-neon">
+            <p>Consultant at MR Consultoria, assisting small and medium-sized businesses with network and infrastructure implementations.</p>
+        </div>
+    </div>
+
+    <!-- Certifications & Courses Section -->
+    <div id="certifications" class="content-section dropdown">
+        <ul>
+            <li onclick="showContent('cert1')">Fortinet Certified Associate in Cybersecurity</li>
+            <li onclick="showContent('cert2')">Microsoft Certified: Azure Fundamentals</li>
+            <li onclick="showContent('cert3')">Google Cloud Platform (GCP) Training</li>
+            <li onclick="showContent('cert4')">Bachelor's Degree in Computer Networks</li>
+        </ul>
+        <div id="cert1" class="hidden-content-neon">
+            <p>Fortinet Certified Associate, specializing in network security and Fortinet solutions for protecting IT infrastructures.</p>
+        </div>
+        <div id="cert2" class="hidden-content-neon">
+            <p>Certified by Microsoft in Azure fundamentals, demonstrating expertise in cloud services and architecture.</p>
+        </div>
+        <div id="cert3" class="hidden-content-neon">
+            <p>Extensive training in Google Cloud Platform with a focus on VPC management, automation, scalability, and security.</p>
+        </div>
+        <div id="cert4" class="hidden-content-neon">
+            <p>Bachelor's degree in Computer Networks from Universidade Anhembi Morumbi, specializing in network infrastructure and cloud computing.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
