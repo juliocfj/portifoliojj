@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('background.png');
+    background-size: cover;
+    color: white;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(128, 0, 128, 0.8);
+    padding: 10px;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 15px 30px;
+    border: none;
+    background-color: rgba(128, 0, 128, 0.8);
+    color: white;
+    font-size: 18px;
+}
+
+.tab:hover {
+    background-color: rgba(186, 85, 211, 0.8);
+}
+
+.content-section {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown ul li {
+    background-color: rgba(128, 0, 128, 0.9);
+    padding: 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown ul li:hover {
+    background-color: rgba(186, 85, 211, 0.9);
+}
+
+.hidden-content, .hidden-content-neon {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(128, 0, 128, 0.7);
+    color: white;
+}
+
+.hidden-content-neon {
+    box-shadow: 0 0 15px rgba(186, 85, 211, 1);
+}
+
+.active {
+    display: block;
+}
+/* Estilo para o seletor de idiomas */
+.language-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.language-selector img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.language-selector img:hover {
+    opacity: 0.7;
+}
