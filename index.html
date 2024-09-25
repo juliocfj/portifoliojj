@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <div>
+            <button onclick="changeLanguage('en')"><img src="eng.png" alt="English"></button>
+            <button onclick="changeLanguage('pt')"><img src="br.png" alt="Português"></button>
+            <button onclick="changeLanguage('it')"><img src="ita.png" alt="Italiano"></button>
+        </div>
+    </header>
+    <nav>
+        <div class="tab" onclick="showSection('projects-content')">Projects</div>
+        <div class="tab" onclick="showSection('technologies-content')">Technologies</div>
+        <div class="tab" onclick="showSection('skills-content')">Hard Skills</div>
+        <div class="tab" onclick="showSection('softskills-content')">Soft Skills</div>
+        <div class="tab" onclick="showSection('roles-content')">Roles</div>
+        <div class="tab" onclick="showSection('certifications-content')">Certifications & Courses</div>
+    </nav>
+    <main>
+        <div id="projects-content" class="content-section">Content for projects goes here.</div>
+        <div id="technologies-content" class="content-section" style="display:none;">Content for technologies goes here.</div>
+        <div id="skills-content" class="content-section" style="display:none;">Content for skills goes here.</div>
+        <div id="softskills-content" class="content-section" style="display:none;">Content for soft skills goes here.</div>
+        <div id="roles-content" class="content-section" style="display:none;">Content for roles goes here.</div>
+        <div id="certifications-content" class="content-section" style="display:none;">Content for certifications goes here.</div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
